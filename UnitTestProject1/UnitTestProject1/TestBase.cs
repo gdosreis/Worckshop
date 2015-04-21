@@ -14,11 +14,11 @@ namespace UnitTestProject1
         [TestInitialize]
         public void InitBrowser()
         {
-                ChromeOptions chromeOptions = new ChromeOptions();
-                chromeOptions.AddArgument("test-type");
-                chromeOptions.AddArgument("no-sandbox");
-                driver = new ChromeDriver(chromeOptions);
-                driver.Navigate().GoToUrl(ConfigUtil.GetString("base.url"));
+            ChromeOptions chromeoptions = new ChromeOptions();
+            chromeoptions.AddArgument("test-type");
+            chromeoptions.AddArgument("no-sandbox");
+            driver = new ChromeDriver();
+            driver.Navigate().GoToUrl(ConfigUtil.GetString("base.url"));
         }
 
         [TestCleanup]
