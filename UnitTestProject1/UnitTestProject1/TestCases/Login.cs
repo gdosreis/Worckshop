@@ -27,12 +27,14 @@ namespace UnitTestProject1.TestCases
             Assert.IsTrue(login.IsEmailFieldPresent());
         }
 
+        // TEST CASE ID = *****. This test case verify if the email field is displayed.
         [TestMethod]
         public void UserSeesPasswordfieldTC13()
         {
             Assert.IsTrue(login.IsPasswordFieldPresent());
         }
 
+        // TEST CASE ID = *****. This test case verify if the email field is displayed.
         [TestMethod]
         public void UserTryLoginsToTheAppWithoutPasswordTC14()
         {
@@ -41,6 +43,7 @@ namespace UnitTestProject1.TestCases
             Assert.IsTrue(login.IsPasswordValidationPresent());
         }
 
+        // TEST CASE ID = *****. This test case verify if the email field is displayed.
         [TestMethod]
         public void UserTryLoginsToTheAppWithoutEmailTC14()
         {
@@ -49,6 +52,7 @@ namespace UnitTestProject1.TestCases
             Assert.IsTrue(login.IsUsernameValidationPresent());
         }
 
+        // TEST CASE ID = *****. This test case verify if the email field is displayed.
         [TestMethod]
         public void UserTryLoginsToTheAppWithInvalidCredentialsTC15()
         {
@@ -58,6 +62,7 @@ namespace UnitTestProject1.TestCases
             Assert.IsTrue(login.IsLoginValidationPresent());
         }
 
+        // TEST CASE ID = *****. This test case verify if the email field is displayed.
         [TestMethod]
         public void UserLoginstoAppTC12()
         {

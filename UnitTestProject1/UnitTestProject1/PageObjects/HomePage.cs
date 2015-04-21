@@ -44,6 +44,27 @@ namespace UnitTestProject1.PageObjects
             return freeShippingButton.Displayed && username.Displayed;
         }
 
+        public bool IsShoppingCartPresent()
+        {
+            return miniCart.Enabled && miniCart.Displayed;
+        }
+
+        public bool IsSearchFieldPresent()
+        {
+            return searchField.Displayed && searchField.Enabled  && btnSearch.Displayed && btnSearch.Enabled;
+        }
+
+        public void SetSearchField(string value)
+        {
+            searchField.SendKeys(value);
+        }
+
+        public SearchResultPage ClickOnSearchField(string value)
+        {
+            btnSearch.Click();
+            return new SearchResultPage(this.driver);
+        }
+
         public MyDxPage ClickUserName()
         {
             username.Click();

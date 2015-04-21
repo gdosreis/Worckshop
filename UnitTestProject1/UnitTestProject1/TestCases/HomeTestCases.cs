@@ -20,6 +20,22 @@ namespace UnitTestProject1.TestCases
             home = new LoginPage(GetDriver()).Login(ConfigUtil.GetString("user.username"), ConfigUtil.GetString("user.password"));
         }
 
+        // TEST CASE ID = *****. This test case verify if the email field is displayed.
+        [TestMethod]
+        public void UserSeesHisShoppingCart()
+        {
+            MyDxPage myDx = home.ClickUserName();
+            Assert.IsTrue(myDx.BeInMyDX()); //Manejo de errores
+        }
+
+        // TEST CASE ID = *****. This test case verify if the email field is displayed.
+        [TestMethod]
+        public void UserSeesaSearchFieldCart()
+        {
+            Assert.IsTrue(home.IsSearchFieldPresent()); //Manejo de errores
+        }
+
+        // TEST CASE ID = *****. This test case verify if the email field is displayed.
         [TestMethod]
         public void UserClicksOnUsername()
         {
