@@ -16,19 +16,20 @@ namespace UnitTestProject1.PageObjects
         [FindsBy(How = How.Name)]
         protected IWebElement Password;
 
-         [FindsBy(How = How.XPath, Using = "div[@class='error_tips'][0]")]
+        [FindsBy(How = How.CssSelector, Using = "div[class='error_tips']")]
         IWebElement userNameError;
 
-        [FindsBy(How = How.XPath, Using = "div[@class='error_tips'][1]")]
+        [FindsBy(How = How.CssSelector, Using = "#loginForm > div:nth-child(5)")]
         protected IWebElement passwordError;
 
-        [FindsBy(How = How.ClassName, Using = "error_tips all_error_tips")]
+        [FindsBy(How = How.CssSelector, Using = "div.error_tips.all_error_tips")]
         protected IWebElement loginValidation;
 
         [FindsBy(How = How.Id)]
         protected IWebElement login_btn;
 
-        public LoginPage(IWebDriver driver) : base(driver)
+        public LoginPage(IWebDriver driver)
+            : base(driver)
         {
             PageFactory.InitElements(this.driver, this);
         }

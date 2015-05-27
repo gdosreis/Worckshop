@@ -43,10 +43,26 @@ namespace UnitTestProject1.TestCases
             Assert.IsTrue(myDx.BeInMyDX()); //Manejo de errores
         }
 
+        // TEST CASE ID = *****. This test case verify if the email field is displayed.
         [TestCleanup]
         public void HomeTestCasesCleanUp()
         {
             home.LogOut();
+        }
+
+        // TEST CASE ID = *****. This test case verify if the email field is displayed.
+        [TestMethod]
+        public void IsDxLink()
+        {
+            Assert.IsTrue(home.isDxLInkPresentInFacebbox()); //Manejo de errores
+        }
+
+        // TEST CASE ID = *****. This test case verify if the email field is displayed.
+        [TestMethod]
+        public void UserPerformsaSearch()
+        {
+            SearchResultPage search = home.PerformaSearch("test");
+            Assert.IsTrue(search.BeInSearchResultPage()); //Manejo de errores
         }
     }
 }

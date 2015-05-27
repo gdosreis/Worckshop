@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using Utils.Util;
+using OpenQA.Selenium.Firefox;
 
 namespace UnitTestProject1
 {
@@ -14,10 +15,7 @@ namespace UnitTestProject1
         [TestInitialize]
         public void InitBrowser()
         {
-            ChromeOptions chromeoptions = new ChromeOptions();
-            chromeoptions.AddArgument("test-type");
-            chromeoptions.AddArgument("no-sandbox");
-            driver = new ChromeDriver();
+            driver = new FirefoxDriver();
             driver.Navigate().GoToUrl(ConfigUtil.GetString("base.url"));
         }
 

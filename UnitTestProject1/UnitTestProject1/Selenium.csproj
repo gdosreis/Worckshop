@@ -60,11 +60,14 @@
   <ItemGroup>
     <Compile Include="PageObjects\HomePage.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
+    <Compile Include="PageObjects\FreeShippingPage.cs" />
     <Compile Include="PageObjects\MyDxPage.cs" />
     <Compile Include="PageObjects\PageBase.cs" />
     <Compile Include="PageObjects\SearchResultPage.cs" />
     <Compile Include="TestBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCases\FreeShipping.cs" />
+    <Compile Include="TestCases\MyDX.cs" />
     <Compile Include="TestCases\HomeTestCases.cs" />
     <Compile Include="TestCases\Login.cs" />
     <Compile Include="Utils\ConfigUtil.cs" />

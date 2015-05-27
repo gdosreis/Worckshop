@@ -22,11 +22,20 @@ namespace UnitTestProject1.PageObjects
         [FindsBy(How = How.LinkText, Using = "My Store Credits")]
         protected IWebElement myStoreCreditsLink;
 
-        [FindsBy(How = How.LinkText, Using = "Gift Card Redeem ")]
+        [FindsBy(How = How.LinkText, Using = "Gift Card Redeem")]
         protected IWebElement giftCardRedeemLink;
 
         [FindsBy(How = How.CssSelector, Using = "#member_info strong")]
         protected IWebElement userName;
+
+        [FindsBy(How = How.Id)]
+        protected IWebElement imageupload;
+
+        [FindsBy(How = How.CssSelector, Using = "a[mid='110']")]
+        protected IWebElement myOrders;
+
+        [FindsBy(How = How.LinkText, Using = "My Profile")]
+        protected IWebElement myProfile;
 
         public MyDxPage(IWebDriver driver) : base(driver)
         {
@@ -41,6 +50,26 @@ namespace UnitTestProject1.PageObjects
         public string GetUsername()
         {
             return userName.Text;
+        }
+
+        public bool IsMyOrdersLinkPresent()
+        {
+            return myOrders.Displayed && myOrders.Enabled;
+        }
+
+        public bool IsMyProfileLinkPresent()
+        {
+            return myOrders.Displayed && myOrders.Enabled;
+        }
+
+        public void UploadImage(string path)
+        {
+            imageupload.SendKeys(path);
+        }
+
+        public string GetValidationAlert()
+        {
+            return driver.SwitchTo().Alert().Text;
         }
     }
 }

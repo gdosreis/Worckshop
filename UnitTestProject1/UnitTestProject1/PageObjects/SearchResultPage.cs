@@ -20,5 +20,10 @@ namespace UnitTestProject1.PageObjects
         {
             PageFactory.InitElements(this.driver, this);{}
         }
+
+        public bool BeInSearchResultPage()
+        {
+            return ResultTable.Displayed && ResultTable.Enabled && filters.Displayed && filters.Enabled;
+        }
     }
 }

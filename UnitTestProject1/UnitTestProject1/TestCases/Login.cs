@@ -57,7 +57,7 @@ namespace UnitTestProject1.TestCases
         public void UserTryLoginsToTheAppWithInvalidCredentialsTC15()
         {
             login.SetEmail(ConfigUtil.GetString("base.url"));
-            login.SetEmail(ConfigUtil.GetString("user.username"));
+            login.SetPassword(ConfigUtil.GetString("user.username"));
             login.ClickLogingButton();
             Assert.IsTrue(login.IsLoginValidationPresent());
         }
