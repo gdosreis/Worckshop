@@ -11,7 +11,7 @@ namespace UnitTestProject1.PageObjects
     public class MyDxPage : DxBasePage
     {
         [FindsBy(How = How.CssSelector, Using = "#member_info img")]
-        IWebElement userImage;
+        protected IWebElement userImage;
 
         [FindsBy(How = How.CssSelector, Using = "a[href='/Points/MyPoints']")]
         protected IWebElement myPointsLink;
@@ -76,6 +76,12 @@ namespace UnitTestProject1.PageObjects
         public string GetValidationAlert()
         {
             return driver.SwitchTo().Alert().Text;
+        }
+
+        //Method to return the ulpload validation message 
+        public void SubmitAlert()
+        {
+             driver.SwitchTo().Alert().Accept();
         }
     }
 }

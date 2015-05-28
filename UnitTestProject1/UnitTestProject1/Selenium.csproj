@@ -71,6 +71,7 @@
     <Compile Include="TestCases\MyDX.cs" />
     <Compile Include="TestCases\HomeTestCases.cs" />
     <Compile Include="TestCases\Login.cs" />
+    <Compile Include="WebDriver.cs" />
     <Compile Include="Utils\ConfigUtil.cs" />
   </ItemGroup>
   <ItemGroup>

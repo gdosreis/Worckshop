@@ -11,10 +11,10 @@ namespace UnitTestProject1.PageObjects
     public class SearchResultPage : DxBasePage
     {
         [FindsBy(How = How.Id, Using = "content_plHaveProducts")]
-        IWebElement ResultTable;
+        protected IWebElement ResultTable;
 
         [FindsBy(How = How.Id, Using = "J_Filter")]
-        IWebElement filters;
+        protected IWebElement filters;
 
         public SearchResultPage(IWebDriver driver) : base(driver)
         {

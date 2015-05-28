@@ -29,13 +29,13 @@ namespace UnitTestProject1.PageObjects
         protected IWebElement searchField;
 
         [FindsBy(How = How.Id)]
-        IWebElement btnSearch;
+        protected IWebElement btnSearch;
 
         [FindsBy(How = How.Id)]
-        IWebElement miniCart;
+        protected IWebElement miniCart;
 
         [FindsBy(How = How.LinkText)]
-        IWebElement Logout;
+        protected IWebElement Logout;
 
         public DxBasePage(IWebDriver d) : base(d)
         {

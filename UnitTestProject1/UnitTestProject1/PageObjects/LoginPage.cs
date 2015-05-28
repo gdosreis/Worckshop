@@ -11,13 +11,13 @@ namespace UnitTestProject1.PageObjects
     public class LoginPage : PageBase
     {
         [FindsBy(How = How.Id)]
-        IWebElement email;
+        protected IWebElement email;
 
         [FindsBy(How = How.Name)]
         protected IWebElement Password;
 
         [FindsBy(How = How.CssSelector, Using = "div[class='error_tips']")]
-        IWebElement userNameError;
+        protected IWebElement userNameError;
 
         [FindsBy(How = How.CssSelector, Using = "#loginForm > div:nth-child(5)")]
         protected IWebElement passwordError;

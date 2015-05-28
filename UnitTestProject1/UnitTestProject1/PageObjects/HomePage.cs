@@ -11,16 +11,16 @@ namespace UnitTestProject1.PageObjects
     public class HomePage : DxBasePage
     {
         [FindsBy(How = How.Id)]
-        IWebElement categoryPanel;
+        protected IWebElement categoryPanel;
 
         [FindsBy(How = How.LinkText, Using ="Consumer Electronics")]
-        IWebElement consumerElectronics;
+        protected IWebElement consumerElectronics;
 
         [FindsBy(How = How.CssSelector, Using = "a[href='http://www.dx.com/c/car-accessories-799']")]
-        IWebElement carAccessories;
+        protected IWebElement carAccessories;
 
         [FindsBy(How = How.CssSelector, Using = "#categoryPanel li:nth-child(2) a[class='menu_title']")]
-        IWebElement computersTabletsNetworking;
+        protected IWebElement computersTabletsNetworking;
         
         public HomePage(IWebDriver d) :base(d)
         {

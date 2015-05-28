@@ -18,25 +18,35 @@ namespace UnitTestProject1.PageObjects
         }
 
         //Method to maximaze the page
-        protected void MaximazePage()
+        public void MaximazePage()
         {
             driver.Manage().Window.Maximize();
         }
 
         //Method to close the page
-        protected void ClosePage()
+        public void ClosePage()
         {
             driver.Close();
         }
 
         //Method to clear all coockies
-        protected void ClearAllCoockies()
+        public void ClearAllCoockies()
         {
             driver.Manage().Cookies.DeleteAllCookies();
         }
 
+        public void SwitchToWindows(string name)
+        {
+            driver.SwitchTo().Window(name);
+        }
+
+        public void SwitchToDefaultContent()
+        {
+            driver.SwitchTo().DefaultContent();
+        }
+
         //Method to take a screenshot in the page.
-        protected void TakeScreenshot(string baseFileName) 
+        public void TakeScreenshot(string baseFileName) 
         {
             try
             {

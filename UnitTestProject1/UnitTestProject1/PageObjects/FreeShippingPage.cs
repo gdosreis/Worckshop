@@ -11,25 +11,25 @@ namespace UnitTestProject1.PageObjects
     public class FreeShippingPage : DxBasePage
     {
         [FindsBy(How = How.Id, Using = "dialog_box")]
-        IWebElement dialogBox;
+        protected IWebElement dialogBox;
 
         [FindsBy(How = How.CssSelector, Using = "div.live_chat a[id^='lpChatBtnHref']")]
         protected IWebElement chatButton;
 
         [FindsBy(How = How.Id)]
-        IWebElement FeedbackOK;
+        protected IWebElement FeedbackOK;
 
         [FindsBy(How = How.CssSelector, Using = "label:nth-child(2) input")]
-        IWebElement FeedbackYes;
+        protected IWebElement FeedbackYes;
 
         [FindsBy(How = How.CssSelector, Using = "label:nth-child(3) input")]
-        IWebElement FeedbackNo;
+        protected IWebElement FeedbackNo;
 
         [FindsBy(How = How.Id)]
-        IWebElement FeedbackSuccess;
+        protected IWebElement FeedbackSuccess;
 
         [FindsBy(How = How.ClassName)]
-        IWebElement close;
+        protected IWebElement close;
 
         
         public FreeShippingPage(IWebDriver driver) : base(driver)

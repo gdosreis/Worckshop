@@ -40,7 +40,13 @@ namespace UnitTestProject1.TestCases
         {
             myDxAccount.UploadImage(@ConfigUtil.GetString("image.invalidpath"));
             Assert.AreEqual(myDxAccount.GetValidationAlert(), ConfigUtil.GetString("image.invalidtype")); //Manejo de errores
+            myDxAccount.SubmitAlert();
         }
 
+        [TestCleanup]
+        public void MyDxCleanUp()
+        {
+            myDxAccount.LogOut();
+        }
     }
 }
