@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace UnitTestProject1.PageObjects
 {
-    public class SearchResultPage : PageBase
+    public class SearchResultPage : DxBasePage
     {
         [FindsBy(How = How.Id, Using = "content_plHaveProducts")]
         IWebElement ResultTable;
@@ -21,6 +21,7 @@ namespace UnitTestProject1.PageObjects
             PageFactory.InitElements(this.driver, this);{}
         }
 
+        //Method to verify if be in Search Result Page
         public bool BeInSearchResultPage()
         {
             return ResultTable.Displayed && ResultTable.Enabled && filters.Displayed && filters.Enabled;

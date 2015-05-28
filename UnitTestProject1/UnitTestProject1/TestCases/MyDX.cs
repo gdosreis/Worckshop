@@ -15,31 +15,32 @@ namespace UnitTestProject1.TestCases
         MyDxPage myDxAccount;
 
         [TestInitialize]
-        public void InitHomeTestCases()
+        public void InitMyDx()
         {
             myDxAccount = new LoginPage(GetDriver()).Login(ConfigUtil.GetString("user.username"), ConfigUtil.GetString("user.password")).ClickUserName();
         }
 
-        // TEST CASE ID = *****. This test case verify if the email field is displayed.
+        // TEST CASE ID = *****. This test case verify if My Orders link is displayed.
         [TestMethod]
         public void IsMyOrdersLinkPresent()
         {
             Assert.IsTrue(myDxAccount.IsMyOrdersLinkPresent()); //Manejo de errores
         }
 
-        // TEST CASE ID = *****. This test case verify if the email field is displayed.
+        // TEST CASE ID = *****. This test case verify if My Profile link is displayed.
         [TestMethod]
         public void IsMyProfileLinkPresent()
         {
-            Assert.IsTrue(myDxAccount.IsMyProfileLinkPresent()); //Manejo de errores
+            Assert.IsTrue(myDxAccount.IsMyProfileLinkPresent());
         }
 
-        // TEST CASE ID = *****. This test case verify if the email field is displayed.
+        // TEST CASE ID = *****. This test case verify Upload validation.
         [TestMethod]
         public void UserEntersInvalidFormatFile()
         {
             myDxAccount.UploadImage(@ConfigUtil.GetString("image.invalidpath"));
             Assert.AreEqual(myDxAccount.GetValidationAlert(), ConfigUtil.GetString("image.invalidtype")); //Manejo de errores
         }
+
     }
 }

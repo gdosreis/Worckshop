@@ -17,21 +17,25 @@ namespace UnitTestProject1.PageObjects
             driver = d;
         }
 
+        //Method to maximaze the page
         protected void MaximazePage()
         {
             driver.Manage().Window.Maximize();
         }
 
+        //Method to close the page
         protected void ClosePage()
         {
             driver.Close();
         }
 
+        //Method to clear all coockies
         protected void ClearAllCoockies()
         {
             driver.Manage().Cookies.DeleteAllCookies();
         }
 
+        //Method to take a screenshot in the page.
         protected void TakeScreenshot(string baseFileName) 
         {
             try

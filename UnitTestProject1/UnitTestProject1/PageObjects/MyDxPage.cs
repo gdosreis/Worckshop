@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace UnitTestProject1.PageObjects
 {
-    public class MyDxPage : PageBase
+    public class MyDxPage : DxBasePage
     {
         [FindsBy(How = How.CssSelector, Using = "#member_info img")]
         IWebElement userImage;
@@ -42,31 +42,37 @@ namespace UnitTestProject1.PageObjects
             PageFactory.InitElements(driver, this);
         }
 
+        //Method to verify if be in Home Page
         public bool BeInMyDX()
         {
             return userName.Displayed && myPointsLink.Displayed && myStoreCreditsLink.Displayed && privateMessageLink.Displayed && giftCardRedeemLink.Displayed;
         }
 
+        //Method to return the username
         public string GetUsername()
         {
             return userName.Text;
         }
 
+        //Method to verify if My Orders Link is present
         public bool IsMyOrdersLinkPresent()
         {
             return myOrders.Displayed && myOrders.Enabled;
         }
 
+        //Method to verify if My Profile Link is present
         public bool IsMyProfileLinkPresent()
         {
             return myOrders.Displayed && myOrders.Enabled;
         }
 
+        //Method to uploads a file
         public void UploadImage(string path)
         {
             imageupload.SendKeys(path);
         }
 
+        //Method to return the ulpload validation message 
         public string GetValidationAlert()
         {
             return driver.SwitchTo().Alert().Text;

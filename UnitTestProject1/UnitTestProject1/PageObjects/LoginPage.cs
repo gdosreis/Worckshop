@@ -28,45 +28,54 @@ namespace UnitTestProject1.PageObjects
         [FindsBy(How = How.Id)]
         protected IWebElement login_btn;
 
-        public LoginPage(IWebDriver driver)
-            : base(driver)
+        public LoginPage(IWebDriver driver) : base(driver)
         {
             PageFactory.InitElements(this.driver, this);
         }
 
+        //Method to verify if the Email field is present
         public bool IsEmailFieldPresent() //Manejo de errores
         {
             return email.Displayed && email.Enabled;
         }
 
+        //Method to verify if the Password field is present
         public bool IsPasswordFieldPresent() //Manejo de errores
         {
             return Password.Displayed && Password.Enabled;
         }
 
+        //Method to verify if the Login button is present
         public bool IsLoginButtonPresent() //Manejo de errores
         {
             return login_btn.Displayed && login_btn.Enabled;
         }
 
+        //Method to set the email value
         public void SetEmail(string mail)
         { email.SendKeys(mail); }
 
+        //Method to set the password value
         public void SetPassword(string pass)
         { Password.SendKeys(pass); }
 
+        //Method to click Login button
         public void ClickLogingButton()
         { login_btn.Click(); }
 
+        //Method to verify if the Password validation is present
         public bool IsPasswordValidationPresent() //Manejo de errores
         { return passwordError.Displayed; }
 
+        //Method to verify if the username validation is present
         public bool IsUsernameValidationPresent() //Manejo de errores
         { return userNameError.Displayed; }
 
+        //Method to verify if the login validation is present
         public bool IsLoginValidationPresent() //Manejo de errores
         { return loginValidation.Displayed; }
 
+        //Method to perform a login
         public HomePage Login(string mail, string pass)
         {
             SetEmail(mail);
