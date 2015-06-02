@@ -37,10 +37,7 @@ namespace UnitTestProject1.PageObjects
         [FindsBy(How = How.LinkText)]
         protected IWebElement Logout;
 
-        public DxBasePage(IWebDriver d) : base(d)
-        {
-            PageFactory.InitElements(this.driver, this);
-        }
+        public DxBasePage(IWebDriver d) : base(d) { }
 
         //Method to verify if Shopping Cart is present 
         public bool IsShoppingCartPresent()

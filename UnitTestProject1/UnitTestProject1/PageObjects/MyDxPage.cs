@@ -37,10 +37,7 @@ namespace UnitTestProject1.PageObjects
         [FindsBy(How = How.LinkText, Using = "My Profile")]
         protected IWebElement myProfile;
 
-        public MyDxPage(IWebDriver driver) : base(driver)
-        {
-            PageFactory.InitElements(driver, this);
-        }
+        public MyDxPage(IWebDriver driver) : base(driver) { }
 
         //Method to verify if be in Home Page
         public bool BeInMyDX()

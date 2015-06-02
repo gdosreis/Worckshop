@@ -16,10 +16,7 @@ namespace UnitTestProject1.PageObjects
         [FindsBy(How = How.Id, Using = "J_Filter")]
         protected IWebElement filters;
 
-        public SearchResultPage(IWebDriver driver) : base(driver)
-        {
-            PageFactory.InitElements(this.driver, this);{}
-        }
+        public SearchResultPage(IWebDriver driver) : base(driver) { }
 
         //Method to verify if be in Search Result Page
         public bool BeInSearchResultPage()

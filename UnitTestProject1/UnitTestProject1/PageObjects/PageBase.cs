@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium.Support.PageObjects;
 
 namespace UnitTestProject1.PageObjects
 {
@@ -15,6 +16,7 @@ namespace UnitTestProject1.PageObjects
         public PageBase(IWebDriver d)
         {
             driver = d;
+            PageFactory.InitElements(this.driver, this);
         }
 
         //Method to maximaze the page
@@ -43,6 +45,11 @@ namespace UnitTestProject1.PageObjects
         public void SwitchToDefaultContent()
         {
             driver.SwitchTo().DefaultContent();
+        }
+
+        public void RefreshPage() 
+        {
+            driver.Navigate().Refresh();
         }
 
         //Method to take a screenshot in the page.

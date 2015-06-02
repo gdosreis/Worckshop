@@ -21,11 +21,9 @@ namespace UnitTestProject1.PageObjects
 
         [FindsBy(How = How.CssSelector, Using = "#categoryPanel li:nth-child(2) a[class='menu_title']")]
         protected IWebElement computersTabletsNetworking;
-        
-        public HomePage(IWebDriver d) :base(d)
-        {
-            PageFactory.InitElements(this.driver, this);
-        }
+
+
+        public HomePage(IWebDriver d) : base(d) { }
 
         //Method to verify if be in Home Page
         public bool BeInHomePage()

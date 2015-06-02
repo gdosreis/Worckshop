@@ -16,7 +16,7 @@ namespace UnitTestProject1.PageObjects
         [FindsBy(How = How.Name)]
         protected IWebElement Password;
 
-        [FindsBy(How = How.CssSelector, Using = "div[class='error_tips']")]
+        [FindsBy(How = How.CssSelector, Using = "div[class='error_tips23']")]
         protected IWebElement userNameError;
 
         [FindsBy(How = How.CssSelector, Using = "#loginForm > div:nth-child(5)")]
@@ -28,10 +28,7 @@ namespace UnitTestProject1.PageObjects
         [FindsBy(How = How.Id)]
         protected IWebElement login_btn;
 
-        public LoginPage(IWebDriver driver) : base(driver)
-        {
-            PageFactory.InitElements(this.driver, this);
-        }
+        public LoginPage(IWebDriver driver) : base(driver) { }
 
         //Method to verify if the Email field is present
         public bool IsEmailFieldPresent() //Manejo de errores

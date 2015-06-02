@@ -31,11 +31,8 @@ namespace UnitTestProject1.PageObjects
         [FindsBy(How = How.ClassName)]
         protected IWebElement close;
 
-        
-        public FreeShippingPage(IWebDriver driver) : base(driver)
-        {
-            PageFactory.InitElements(driver, this);
-        }
+
+        public FreeShippingPage(IWebDriver driver) : base(driver) { }
 
         //Method to verify if be in Free Shipping page
         public bool BeInFreeShipping()
