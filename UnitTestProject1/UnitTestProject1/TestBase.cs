@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.IE;
 using Utils.Util;
 using OpenQA.Selenium.Firefox;
 
@@ -16,6 +16,7 @@ namespace UnitTestProject1
         public void InitBrowser()
         {
             driver = new FirefoxDriver();
+            driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(ConfigUtil.GetString("base.url"));
         }
 

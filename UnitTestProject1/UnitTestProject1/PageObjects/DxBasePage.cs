@@ -10,8 +10,6 @@ namespace UnitTestProject1.PageObjects
 {
     public class DxBasePage : PageBase
     {
-        [FindsBy(How = How.CssSelector, Using = "span.flag.t.flag-ar")]
-        IWebElement freeShippingButton; 
 
         [FindsBy(How = How.LinkText, Using="gercho100")]
         protected IWebElement username;
@@ -23,7 +21,7 @@ namespace UnitTestProject1.PageObjects
         protected IWebElement logo;
 
         [FindsBy(How = How.CssSelector, Using = "span.flag.t.flag-ar")]
-        protected IWebElement freeShipping;
+        protected IWebElement freeShippingButton;
 
         [FindsBy(How = How.Id, Using = "txtKeyword")]
         protected IWebElement searchField;
@@ -93,7 +91,7 @@ namespace UnitTestProject1.PageObjects
         //Return a Freeshipping page object, because redirest to this page.
         public FreeShippingPage ClickFreeShippingButton()
         {
-            freeShipping.Click();
+            freeShippingButton.Click();
             this.driver.SwitchTo().Window(this.driver.WindowHandles[1]);
             return new FreeShippingPage(this.driver);
         }

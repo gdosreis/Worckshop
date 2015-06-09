@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ using Utils.Util;
 namespace UnitTestProject1.TestCases
 {
     [TestClass]
-    public class WebDriver
+    public class WebDriverExample
     {
         private IWebDriver driver;
 
@@ -20,6 +21,7 @@ namespace UnitTestProject1.TestCases
         public void InitBrowser()
         {
             driver = new FirefoxDriver();
+            driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl(ConfigUtil.GetString("base.url"));
         }
 
@@ -29,7 +31,6 @@ namespace UnitTestProject1.TestCases
             driver.FindElement(By.Id("email")).SendKeys(ConfigUtil.GetString("user.username"));//Search the email field by id and set the username value.
             driver.FindElement(By.Name("Password")).SendKeys(ConfigUtil.GetString("user.password"));//Search the password field by name and set the username value.
             driver.FindElement(By.Id("login_btn")).Click();//Search the Login button by id and click on it.
-            Assert.IsTrue(driver.FindElement(By.CssSelector("a[title='gercho100']")).Displayed);//Verify if the username link is display.Search it by CssSelector
             Assert.IsTrue(driver.FindElement(By.LinkText("gercho100")).Displayed);//Verify if the username link is display.Search it by LinkText
         }
 
@@ -39,7 +40,7 @@ namespace UnitTestProject1.TestCases
             driver.FindElement(By.Id("email")).SendKeys(ConfigUtil.GetString("user.username"));//Search the email field by id and set the username value.
             driver.FindElement(By.Name("Password")).SendKeys(ConfigUtil.GetString("user.password"));//Search the password field by name and set the username value.
             driver.FindElement(By.Id("login_btn")).Click();//Search the Login button by id and click on it.
-            driver.FindElement(By.LinkText("gercho100")).Click();//Search the Username link by LinkText and click on it.It open a new windows.
+            driver.FindElement(By.PartialLinkText("gercho")).Click();//Search the Username link by PartialLinkText and click on it.It open a new windows.
             driver.SwitchTo().Window(driver.WindowHandles[1]);//Switch To new opened windows. WindowHandles return all names to opened windows by open order.
             Assert.IsTrue(driver.FindElement(By.XPath("//*[@id='member_info']/div[2]/h2/strong")).Displayed);//Verify if the username name is display.Search it by XPath
             Assert.IsTrue(driver.FindElement(By.XPath("//*[@id='member_info']//strong")).Displayed);//Verify if the username name is display. Search it by a better XPath

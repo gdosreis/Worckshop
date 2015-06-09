@@ -71,7 +71,7 @@
     <Compile Include="TestCases\MyDX.cs" />
     <Compile Include="TestCases\HomeTestCases.cs" />
     <Compile Include="TestCases\Login.cs" />
-    <Compile Include="WebDriver.cs" />
+    <Compile Include="TestCases\WebDriverExample.cs" />
     <Compile Include="Utils\ConfigUtil.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -79,7 +79,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\chromedriver.exe" />
+    <Folder Include="bin\Debug\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

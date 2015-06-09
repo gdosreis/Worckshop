@@ -52,13 +52,13 @@ namespace UnitTestProject1.PageObjects
             return FeedbackNo.Selected;
         }
 
-        //Method to select and the YES option
+        //Method to select the YES option
         public void CheckYesOption()
         {
             FeedbackYes.Click();
         }
 
-        //Method to select and the NO option
+        //Method to select the NO option
         public void CheckNoOption()
         {
             FeedbackNo.Click();
