@@ -19,7 +19,7 @@ namespace UnitTestProject1.PageObjects
         public SearchResultPage(IWebDriver driver) : base(driver) { }
 
         //Method to verify if be in Search Result Page
-        public bool BeInSearchResultPage()
+        public bool AreSearchResultElementPresents()
         {
             return ResultTable.Displayed && ResultTable.Enabled && filters.Displayed && filters.Enabled;
         }

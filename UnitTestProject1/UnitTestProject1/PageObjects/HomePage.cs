@@ -26,7 +26,7 @@ namespace UnitTestProject1.PageObjects
         public HomePage(IWebDriver d) : base(d) { }
 
         //Method to verify if be in Home Page
-        public bool BeInHomePage()
+        public bool AreHomeElementPresents()
         {
             return categoryPanel.Displayed && consumerElectronics.Displayed && carAccessories.Displayed && computersTabletsNetworking.Displayed;
         }

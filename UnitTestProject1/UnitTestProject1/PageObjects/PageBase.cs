@@ -37,16 +37,13 @@ namespace UnitTestProject1.PageObjects
             driver.Manage().Cookies.DeleteAllCookies();
         }
 
-        public void SwitchToWindows(string name)
-        {
-            driver.SwitchTo().Window(name);
-        }
 
         public void SwitchToDefaultContent()
         {
             driver.SwitchTo().DefaultContent();
         }
 
+        //Method to refresh the current page.
         public void RefreshPage() 
         {
             driver.Navigate().Refresh();
@@ -58,8 +55,6 @@ namespace UnitTestProject1.PageObjects
             try
             {
                 string screenshotsPath = ConfigUtil.GetString("screenshots.path");
-                if (!screenshotsPath.EndsWith("\\"))
-                    screenshotsPath += "\\";
                 ((ITakesScreenshot)driver).GetScreenshot().SaveAsFile(
                     screenshotsPath + baseFileName + ".png",
                     System.Drawing.Imaging.ImageFormat.Png);

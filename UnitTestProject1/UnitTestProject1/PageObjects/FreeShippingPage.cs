@@ -35,7 +35,7 @@ namespace UnitTestProject1.PageObjects
         public FreeShippingPage(IWebDriver driver) : base(driver) { }
 
         //Method to verify if be in Free Shipping page
-        public bool BeInFreeShipping()
+        public bool AreFreeShipingElementsPresents()
         {
             return dialogBox.Displayed && dialogBox.Enabled && chatButton.Displayed && chatButton.Enabled && FeedbackOK.Displayed && FeedbackOK.Enabled;
         }

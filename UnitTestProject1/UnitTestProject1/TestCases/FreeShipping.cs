@@ -9,36 +9,28 @@ using Utils.Util;
 
 namespace UnitTestProject1.TestCases
 {
-    /// <summary>
-    /// This class checks the FreeShipping page functionality
-    /// </summary>
+    // This class checks the FreeShipping page functionality
     [TestClass]
     public class FreeShipping : TestBase
     {
         FreeShippingPage freeShipping;
 
-        /// <summary>
-        /// Login in the application and directs to FreeShipping section.
-        /// </summary>
+        // Login in the application and directs to FreeShipping section.
         [TestInitialize]
         public void InitFreeShipping()
         {
             freeShipping = new LoginPage(GetDriver()).Login(ConfigUtil.GetString("user.username"), ConfigUtil.GetString("user.password")).ClickFreeShippingButton();
         }
 
-        /// <summary>
-        /// TEST CASE ID = *****. This test case verify if the users is directs to Free Shiping page.
-        /// </summary>
+        // TEST CASE ID = *****. This test case verify if the users is directs to Free Shiping page.
         [TestMethod]
         public void UserDirectsToFreeShippingPageTCXXXX()
         {
             freeShipping.TakeScreenshot("UserDirectsToFreeShippingPageTCXXXX");
-            Assert.IsTrue(freeShipping.BeInFreeShipping());
+            Assert.IsTrue(freeShipping.AreFreeShipingElementsPresents());
         }
 
-        /// <summary>
-        /// TEST CASE ID = *****. This test case verify if the YES option is selected by default.
-        /// </summary>
+        // TEST CASE ID = *****. This test case verify if the YES option is selected by default.
         [TestMethod]
         public void UserSeeYesAsDefaultCheckedOptionTCXXXX()
         {
@@ -47,9 +39,7 @@ namespace UnitTestProject1.TestCases
             Assert.IsFalse(freeShipping.IsCheckedNoOption());
         }
 
-        /// <summary>
-        /// TEST CASE ID = *****. This test case verify if the NO option could be select.
-        /// </summary>
+        // TEST CASE ID = *****. This test case verify if the NO option could be select.
         [TestMethod]
         public void UserCheckesNoOptionTCXXXX()
         {
@@ -60,9 +50,7 @@ namespace UnitTestProject1.TestCases
             Assert.IsTrue(freeShipping.IsCheckedNoOption());
         }
 
-        /// <summary>
-        /// TEST CASE ID = *****. This test case verify the Submit respons functionality.
-        /// </summary>
+        // TEST CASE ID = *****. This test case verify the Submit respons functionality.
         [TestMethod]
         public void UserSubmitsYourResponseTCXXXX()
         {
@@ -75,9 +63,7 @@ namespace UnitTestProject1.TestCases
             Assert.IsTrue(freeShipping.IsSubmitedRespons());
         }
 
-        /// <summary>
-        ///TEST CASE ID = *****. This test case verify the Close dialog box functionality.
-        /// </summary>
+        // TEST CASE ID = *****. This test case verify the Close dialog box functionality.
         [TestMethod]
         public void UserClosesDialogBoxTCXXXX()
         {
@@ -87,9 +73,7 @@ namespace UnitTestProject1.TestCases
             Assert.IsFalse(freeShipping.IsDialogPresent());
         }
 
-        /// <summary>
-        /// Log outs of application
-        /// </summary>
+        // Logout of application
         [TestCleanup]
         public void FreeShippingCleanUp()
         {

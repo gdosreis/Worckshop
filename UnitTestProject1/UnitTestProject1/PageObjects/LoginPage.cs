@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium.Support.UI;
 
 namespace UnitTestProject1.PageObjects
 {
@@ -28,22 +29,28 @@ namespace UnitTestProject1.PageObjects
         [FindsBy(How = How.Id)]
         protected IWebElement login_btn;
 
-        public LoginPage(IWebDriver driver) : base(driver) { }
+        private WebDriverWait wait;
+
+        public LoginPage(IWebDriver driver) : base(driver)
+        {
+            PageFactory.InitElements(this.driver,this);
+            wait = new WebDriverWait(this.driver, new TimeSpan(0, 0, 15));
+        }
 
         //Method to verify if the Email field is present
-        public bool IsEmailFieldPresent() //Manejo de errores
+        public bool IsEmailFieldPresent()
         {
             return email.Displayed && email.Enabled;
         }
 
         //Method to verify if the Password field is present
-        public bool IsPasswordFieldPresent() //Manejo de errores
+        public bool IsPasswordFieldPresent()
         {
             return Password.Displayed && Password.Enabled;
         }
 
         //Method to verify if the Login button is present
-        public bool IsLoginButtonPresent() //Manejo de errores
+        public bool IsLoginButtonPresent()
         {
             return login_btn.Displayed && login_btn.Enabled;
         }
@@ -61,15 +68,15 @@ namespace UnitTestProject1.PageObjects
         { login_btn.Click(); }
 
         //Method to verify if the Password validation is present
-        public bool IsPasswordValidationPresent() //Manejo de errores
+        public bool IsPasswordValidationPresent() 
         { return passwordError.Displayed; }
 
         //Method to verify if the username validation is present
-        public bool IsUsernameValidationPresent() //Manejo de errores
+        public bool IsUsernameValidationPresent()
         { return userNameError.Displayed; }
 
         //Method to verify if the login validation is present
-        public bool IsLoginValidationPresent() //Manejo de errores
+        public bool IsLoginValidationPresent() 
         { return loginValidation.Displayed; }
 
         //Method to perform a login

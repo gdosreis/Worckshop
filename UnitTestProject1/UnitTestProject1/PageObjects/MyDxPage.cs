@@ -40,7 +40,7 @@ namespace UnitTestProject1.PageObjects
         public MyDxPage(IWebDriver driver) : base(driver) { }
 
         //Method to verify if be in Home Page
-        public bool BeInMyDX()
+        public bool AreMyDxElementsPresents()
         {
             return userName.Displayed && myPointsLink.Displayed && myStoreCreditsLink.Displayed && privateMessageLink.Displayed && giftCardRedeemLink.Displayed;
         }
