@@ -33,7 +33,6 @@ namespace UnitTestProject1.PageObjects
 
         public LoginPage(IWebDriver driver) : base(driver)
         {
-            PageFactory.InitElements(this.driver,this);
             wait = new WebDriverWait(this.driver, new TimeSpan(0, 0, 15));
         }
 
